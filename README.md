@@ -16,12 +16,12 @@
 Para rodar o projeto na sua máquina basta seguir os passos:
 
     - Ter uma IDE de sua preferência
-    - Python Instalado: https://www.python.org/downloads/
-    - NodeJS Instalado: https://nodejs.org/en/download/
+    - Python instalado: [Site de instalacao do python](https://www.python.org/downloads/)]
+    - Node Instalado    [ Site de instalacao do Node ](https://nodejs.org/en/download/)]
 
    >Copiar o Projeto
    ```
-   XPTO
+   [https://github.com/guilherme-albuquerque/Project.git]
    ```
 
    >Instalar as dependencia do robot no seu terminal
