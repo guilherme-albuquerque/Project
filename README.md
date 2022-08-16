@@ -9,8 +9,8 @@
             │─── tests                      # Diretorio dos testes
                 │─── results                    # Diretorio de resultados dos testes
             │─── utils                      # Diretorio de variaveis
-            │─── requiriments.txt           # arquivo com as bibliotecas utilizadas
-            │─── README.md
+        │─── requiriments.txt           # arquivo com as bibliotecas utilizadas
+        │─── README.md
 
 #### Configurando o projeto na sua máquina
 Para rodar o projeto na sua máquina basta seguir os passos:
