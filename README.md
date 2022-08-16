@@ -21,7 +21,7 @@ Para rodar o projeto na sua máquina basta seguir os passos:
 
    >Copiar o Projeto
    ```
-   (https://github.com/guilherme-albuquerque/Project.git)
+   https://github.com/guilherme-albuquerque/Project.git
    ```
 
    >Instalar as dependencia do robot no seu terminal
