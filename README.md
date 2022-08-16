@@ -38,3 +38,5 @@ Para rodar o projeto na sua máquina basta seguir os passos:
    rfbroser init
    ```
    
+   > Executando o Script: Passo a Passo
+   1.
