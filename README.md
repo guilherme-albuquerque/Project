@@ -39,4 +39,7 @@ Para rodar o projeto na sua máquina basta seguir os passos:
    ```
    
    > Executando o Script: Passo a Passo
-   1.
+   1. Abra o prompt de comando.
+   2. Navegue até o arquivo ConsultaAoCubo.robot que se encontra no caminho "Project" > "aoCubo" > "tests" > "ConsultaAoCubo.robot"
+   3. Digite o comando "python -m robot -d ./results ConsultaAoCubo.robot"
+   
