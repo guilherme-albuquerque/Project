@@ -24,11 +24,11 @@ Para rodar o projeto na sua máquina basta seguir os passos:
    XPTO
    ```
 
-    > Instalar as dependencia do robot no seu terminal
+   >Instalar as dependencia do robot no seu terminal
     -- cd C:\{PATH}\aocubo
     -- pip install -r .\requirements.txt
     
 
-    > Após a instalação executar o comando:
+   >Após a instalação executar o comando:
     -- rfbroser init
    
