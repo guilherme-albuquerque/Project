@@ -3,14 +3,14 @@
 </h1>
 
 #### Estrutura do Projeto
-│───Project
-    │─── .AoCubo                        # Diretorio de arquivos de automação
-        │─── resources                  # Diretorio de arquivos de ações
-        │─── results                    # Diretorio de resultados dos testes
-        │─── tests                      # Diretorio dos testes
-        │─── utils                      # Diretorio de variaveis
-        │─── requiriments.txt           # arquivo com as bibliotecas utilizadas
-        │─── README.md
+    │───Project
+        │─── .AoCubo                        # Diretorio de arquivos de automação
+            │─── resources                  # Diretorio de arquivos de ações
+            │─── results                    # Diretorio de resultados dos testes
+            │─── tests                      # Diretorio dos testes
+            │─── utils                      # Diretorio de variaveis
+            │─── requiriments.txt           # arquivo com as bibliotecas utilizadas
+            │─── README.md
 
 #### Configurando o projeto na sua máquina
 Para rodar o projeto na sua máquina basta seguir os passos:
