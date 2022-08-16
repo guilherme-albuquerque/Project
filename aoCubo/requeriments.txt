@@ -1,0 +1,5 @@
+python==3.10.6
+robotframework-browser==13.4.0
+robotF extension==1.6.8
+code runner==0.11.8
+robot code==0.13.3
