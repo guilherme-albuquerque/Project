@@ -6,8 +6,8 @@
     │───Project
         │─── .AoCubo                        # Diretorio de arquivos de automação
             │─── resources                  # Diretorio de arquivos de ações
-            │─── results                    # Diretorio de resultados dos testes
             │─── tests                      # Diretorio dos testes
+                │─── results                    # Diretorio de resultados dos testes
             │─── utils                      # Diretorio de variaveis
             │─── requiriments.txt           # arquivo com as bibliotecas utilizadas
             │─── README.md
