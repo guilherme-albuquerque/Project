@@ -3,7 +3,7 @@
 </h1>
 
 #### Estrutura do Projeto
-
+│───Project
     │─── .AoCubo                        # Diretorio de arquivos de automação
         │─── resources                  # Diretorio de arquivos de ações
         │─── results                    # Diretorio de resultados dos testes
