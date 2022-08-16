@@ -19,7 +19,7 @@ Para rodar o projeto na sua máquina basta seguir os passos:
     - Python Instalado: https://www.python.org/downloads/
     - NodeJS Instalado: https://nodejs.org/en/download/
 
-    > Copiar o Projeto
+   >Copiar o Projeto
    ```
    XPTO
    ```
