@@ -19,11 +19,12 @@ Para rodar o projeto na sua máquina basta seguir os passos:
     - Python Instalado: https://www.python.org/downloads/
     - NodeJS Instalado: https://nodejs.org/en/download/
 
-    >Copiar o Projeto
-   -- XPTO
+    > Copiar o Projeto
+   ```
+   XPTO
+   ```
 
-
-    >Instalar as dependencia do robot no seu terminal
+    > Instalar as dependencia do robot no seu terminal
     -- cd C:\{PATH}\aocubo
     -- pip install -r .\requirements.txt
     
