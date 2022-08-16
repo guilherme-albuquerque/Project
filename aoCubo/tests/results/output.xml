@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220816 17:55:10.119" rpa="false" schemaversion="3">
+<suite id="s1" name="ConsultaAoCubo" source="C:\Users\Guilherme\Desktop\Project\aoCubo\tests\ConsultaAoCubo.robot">
+<kw name="Start Session" library="Base" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220816 17:55:10.943" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\Users\\Guilherme\\Desktop\\Project\\aoCubo\\tests\\results\\browser\\traces\\74731ba3-a783-4c54-98d0-33a1b6c68b92"}</msg>
+<msg timestamp="20220816 17:55:11.423" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\Users\\Guilherme\\Desktop\\Project\\aoCubo\\tests\\results\\browser\\traces\\74731ba3-a783-4c54-98d0-33a1b6c68b92"}</msg>
+<status status="PASS" starttime="20220816 17:55:10.943" endtime="20220816 17:55:11.423"/>
+</kw>
+<kw name="New Context" library="Browser">
+<arg>ignoreHTTPSErrors=true</arg>
+<arg>viewport={'width':1540, 'height': 1050}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220816 17:55:11.423" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": true, "bypassCSP": false, "viewport": {"height": 1050, "width": 1540}, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220816 17:55:11.464" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220816 17:55:11.464" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': True, 'bypassCSP': False, 'viewport': {'height': 1050, 'width': 1540}, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220816 17:55:11.423" endtime="20220816 17:55:11.464"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220816 17:55:16.882" level="INFO">Successfully initialized new page object and opened url: https://portal.dev.cloud.aocubo.com/login</msg>
+<status status="PASS" starttime="20220816 17:55:11.464" endtime="20220816 17:55:16.882"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:10.943" endtime="20220816 17:55:16.882"/>
+</kw>
+<test id="s1-t1" name="User Login" line="12">
+<kw name="Login With" library="Login">
+<arg>vsantos.lvieira@gmail.com</arg>
+<arg>Lopo@2812</arg>
+<kw name="Type Text" library="Browser">
+<arg>${txtEmail}</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220816 17:55:16.935" level="INFO">Types the text 'vsantos.lvieira@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20220816 17:55:16.935" endtime="20220816 17:55:17.531"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${txtSenha}</arg>
+<arg>${pass}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220816 17:55:17.531" level="INFO">Types the text 'Lopo@2812' in the given field.</msg>
+<status status="PASS" starttime="20220816 17:55:17.531" endtime="20220816 17:55:17.678"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${btnEntrar}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:17.678" endtime="20220816 17:55:17.881"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:16.935" endtime="20220816 17:55:17.881"/>
+</kw>
+<kw name="Take Screenshot And Continuos Sucess" library="Login" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${bntLoginSucess} &gt;&gt; text=Perfil</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:19.046" level="INFO">Waited for Element with selector xpath=//div[@class="styles__UserSettings-sc-1sbqjsh-16 bQvsPG"] &gt;&gt; text=Perfil at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:17.883" endtime="20220816 17:55:19.047"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:19.422" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:19.047" endtime="20220816 17:55:19.422"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:17.882" endtime="20220816 17:55:19.422"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:16.882" endtime="20220816 17:55:19.423"/>
+</test>
+<test id="s1-t2" name="Filter Name" line="16">
+<kw name="Filter name: Imóvel teste automatizado robot" library="Filters">
+<kw name="Click" library="Browser">
+<arg>${btnImoveis}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:19.511" endtime="20220816 17:55:20.556"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${txtPesquisa}</arg>
+<arg>Imóvel teste automatizado robot</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220816 17:55:20.557" level="INFO">Types the text 'Imóvel teste automatizado robot' in the given field.</msg>
+<status status="PASS" starttime="20220816 17:55:20.557" endtime="20220816 17:55:23.945"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${btnBuscar}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:23.945" endtime="20220816 17:55:25.491"/>
+</kw>
+<kw name="Clear Text" library="Browser">
+<arg>${txtPesquisa}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears the text field found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:25.492" endtime="20220816 17:55:26.229"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:19.510" endtime="20220816 17:55:26.229"/>
+</kw>
+<kw name="Take Screenshot And Continuos Filters" library="Filters" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnPesqSucess} &gt;&gt; text=Imóvel teste automatizado robot</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:26.349" level="INFO">Waited for Element with selector xpath=//h3[@class="styles__TitleItem-sc-1hg4id7-11 kQrABm"] &gt;&gt; text=Imóvel teste automatizado robot at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:26.231" endtime="20220816 17:55:26.349"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:26.807" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:26.349" endtime="20220816 17:55:26.807"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:26.230" endtime="20220816 17:55:26.808"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:19.444" endtime="20220816 17:55:26.808"/>
+</test>
+<test id="s1-t3" name="Filter Incorporation" line="19">
+<kw name="Filter incorporation: BKO" library="Filters">
+<kw name="Click" library="Browser">
+<arg>${btnIncorporation}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:27.005" endtime="20220816 17:55:27.450"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${filtBKO}</arg>
+<arg>BKO</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220816 17:55:27.451" level="INFO">Types the text 'BKO' in the given field.</msg>
+<status status="PASS" starttime="20220816 17:55:27.451" endtime="20220816 17:55:27.658"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${btnBKO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:27.658" endtime="20220816 17:55:28.148"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:27.005" endtime="20220816 17:55:28.149"/>
+</kw>
+<kw name="Take Screenshot And Continuos Filters" library="Filters" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnPesqSucess} &gt;&gt; text=Imóvel teste automatizado robot</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:29.721" level="INFO">Waited for Element with selector xpath=//h3[@class="styles__TitleItem-sc-1hg4id7-11 kQrABm"] &gt;&gt; text=Imóvel teste automatizado robot at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:28.150" endtime="20220816 17:55:29.722"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:30.173" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:29.722" endtime="20220816 17:55:30.174"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:28.150" endtime="20220816 17:55:30.174"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:26.969" endtime="20220816 17:55:30.174"/>
+</test>
+<test id="s1-t4" name="Filter Price" line="22">
+<kw name="Filter price: R$ 1.134.667,00 até 1.140.000,00" library="Filters">
+<kw name="Click" library="Browser">
+<arg>${btnFilt}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:30.409" endtime="20220816 17:55:30.799"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txtValueInit}</arg>
+<arg>visible</arg>
+<arg>2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:30.918" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[2]/div[1]/div/div[1]/div/input[1] at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:30.799" endtime="20220816 17:55:30.918"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${txtValueInit}</arg>
+<arg>113466700</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220816 17:55:30.919" level="INFO">Types the text '113466700' in the given field.</msg>
+<status status="PASS" starttime="20220816 17:55:30.918" endtime="20220816 17:55:31.703"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${txtValueFinal}</arg>
+<arg>visible</arg>
+<arg>2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:31.815" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[2]/div[1]/div/div[1]/div/input[2] at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:31.703" endtime="20220816 17:55:31.816"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>${txtValueFinal}</arg>
+<arg>114000000</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220816 17:55:31.816" level="INFO">Types the text '114000000' in the given field.</msg>
+<status status="PASS" starttime="20220816 17:55:31.816" endtime="20220816 17:55:32.587"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${btnFilterAplicationValue}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:32.588" endtime="20220816 17:55:33.126"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:30.409" endtime="20220816 17:55:33.126"/>
+</kw>
+<kw name="Take Screenshot And Continuos Filters" library="Filters" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnPesqSucess} &gt;&gt; text=Imóvel teste automatizado robot</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:33.525" level="INFO">Waited for Element with selector xpath=//h3[@class="styles__TitleItem-sc-1hg4id7-11 kQrABm"] &gt;&gt; text=Imóvel teste automatizado robot at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:33.128" endtime="20220816 17:55:33.525"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:33.983" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:33.526" endtime="20220816 17:55:33.983"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:33.127" endtime="20220816 17:55:33.983"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:30.209" endtime="20220816 17:55:33.985"/>
+</test>
+<test id="s1-t5" name="Filter Status" line="25">
+<kw name="Filter status: ready" library="Filters">
+<kw name="Click" library="Browser">
+<arg>${btnStage}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:34.160" endtime="20220816 17:55:34.543"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selectStageReady}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:34.543" endtime="20220816 17:55:34.991"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${btnFltAplicationStage}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:34.991" endtime="20220816 17:55:35.489"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:34.160" endtime="20220816 17:55:35.490"/>
+</kw>
+<kw name="Clear Filter" library="Filters">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnClear} &gt;&gt; text=Limpar Filtro</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:35.631" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[1]/div[2]/div[2]/button &gt;&gt; text=Limpar Filtro at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:35.492" endtime="20220816 17:55:35.631"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${btnClear}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:35.631" endtime="20220816 17:55:36.225"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:35.491" endtime="20220816 17:55:36.225"/>
+</kw>
+<kw name="Take Screenshot And Continuos Filters" library="Filters" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnPesqSucess} &gt;&gt; text=Imóvel teste automatizado robot</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:36.629" level="INFO">Waited for Element with selector xpath=//h3[@class="styles__TitleItem-sc-1hg4id7-11 kQrABm"] &gt;&gt; text=Imóvel teste automatizado robot at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:36.227" endtime="20220816 17:55:36.629"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:37.089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-5.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:36.629" endtime="20220816 17:55:37.090"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:36.226" endtime="20220816 17:55:37.090"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:34.008" endtime="20220816 17:55:37.090"/>
+</test>
+<test id="s1-t6" name="Filter City" line="29">
+<kw name="Filter City: São Paulo" library="Filters">
+<kw name="Click" library="Browser">
+<arg>${btnFltCity}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:37.295" endtime="20220816 17:55:37.666"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${cmbCity}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:37.666" endtime="20220816 17:55:38.087"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${selectCity}</arg>
+<arg>visible</arg>
+<arg>2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:38.208" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/div[1] at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:38.087" endtime="20220816 17:55:38.208"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selectCity}</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:38.209" endtime="20220816 17:55:38.518"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${selectSp}</arg>
+<arg>visible</arg>
+<arg>2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:38.620" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/div[2]/div/div[1]/div[2]/button[1] at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:38.518" endtime="20220816 17:55:38.620"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selectSp}</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:38.621" endtime="20220816 17:55:39.018"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:37.294" endtime="20220816 17:55:39.019"/>
+</kw>
+<kw name="Take Screenshot And Continuos Filters" library="Filters" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnPesqSucess} &gt;&gt; text=Imóvel teste automatizado robot</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:39.492" level="INFO">Waited for Element with selector xpath=//h3[@class="styles__TitleItem-sc-1hg4id7-11 kQrABm"] &gt;&gt; text=Imóvel teste automatizado robot at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:39.021" endtime="20220816 17:55:39.492"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:39.958" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-6.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:39.492" endtime="20220816 17:55:39.958"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:39.020" endtime="20220816 17:55:39.958"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:37.132" endtime="20220816 17:55:39.959"/>
+</test>
+<test id="s1-t7" name="Filter" line="32">
+<kw name="Filter Neighborhood: Jardim Triana" library="Filters">
+<kw name="Click" library="Browser">
+<arg>${btnFltCity}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:40.150" endtime="20220816 17:55:40.551"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${cmbCity}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:40.551" endtime="20220816 17:55:40.948"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${selectNeig}</arg>
+<arg>visible</arg>
+<arg>2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:41.050" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/div[2]/div/div[4]/div[1]/input at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:40.948" endtime="20220816 17:55:41.050"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selectNeig}</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:41.050" endtime="20220816 17:55:41.358"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>${selectJardim}</arg>
+<arg>visible</arg>
+<arg>2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:41.579" level="INFO">Waited for Element with selector xpath=/html/body/div/div[2]/div[2]/div/div[1]/div/form/div[1]/div[2]/div[1]/div[2]/div/div[4]/div[2]/button[119] at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:41.358" endtime="20220816 17:55:41.579"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${selectJardim}</arg>
+<arg>force=true</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220816 17:55:41.579" endtime="20220816 17:55:42.169"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:40.149" endtime="20220816 17:55:42.170"/>
+</kw>
+<kw name="Take Screenshot And Continuos Filters" library="Filters" type="TEARDOWN">
+<kw name="Wait For Elements State" library="Browser">
+<arg>${btnPesqSucess} &gt;&gt; text=Imóvel teste automatizado robot</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220816 17:55:42.613" level="INFO">Waited for Element with selector xpath=//h3[@class="styles__TitleItem-sc-1hg4id7-11 kQrABm"] &gt;&gt; text=Imóvel teste automatizado robot at state visible</msg>
+<status status="PASS" starttime="20220816 17:55:42.174" endtime="20220816 17:55:42.614"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220816 17:55:43.035" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-7.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220816 17:55:42.614" endtime="20220816 17:55:43.035"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:42.173" endtime="20220816 17:55:43.036"/>
+</kw>
+<status status="PASS" starttime="20220816 17:55:39.981" endtime="20220816 17:55:43.037"/>
+</test>
+<doc>Consulta site Ao Cubo</doc>
+<status status="PASS" starttime="20220816 17:55:10.119" endtime="20220816 17:55:43.139"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="ConsultaAoCubo">ConsultaAoCubo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
